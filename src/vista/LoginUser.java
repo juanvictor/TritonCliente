@@ -7,6 +7,8 @@ package vista;
 
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import java.util.Calendar;
+import com.placeholder.PlaceHolder;
 
 /**
  *
@@ -14,6 +16,8 @@ import javax.swing.SwingConstants;
  */
 public class LoginUser extends javax.swing.JFrame {
 
+    PlaceHolder holder;
+    
     /**
      * Creates new form LoginUser
      */
@@ -43,9 +47,15 @@ public class LoginUser extends javax.swing.JFrame {
         
         jLabelCopyright.setHorizontalAlignment(SwingConstants.CENTER);
         jLabelCopyright.setVerticalAlignment(SwingConstants.CENTER);
+        Calendar f_actual = Calendar.getInstance();
+        jLabelCopyright.setText("Copyright ® Fiscalía General del Estado 2012 - " + f_actual.get(Calendar.YEAR));
         
         jLabelUserIco.setHorizontalAlignment(SwingConstants.CENTER);
-        jLabelUserIco.setVerticalAlignment(SwingConstants.CENTER);
+        jLabelUserIco.setVerticalAlignment(SwingConstants.CENTER); 
+        
+        holder = new PlaceHolder(jTextFieldEmail, "Correo electrónico");
+        holder = new PlaceHolder(jTextFieldPassword, "Contraseña");
+//        holder = new PlaceHolder(jPasswordFieldPassword, "Contraseña");
     }
 
     /**
@@ -69,6 +79,8 @@ public class LoginUser extends javax.swing.JFrame {
         jButtonAcceder = new javax.swing.JButton();
         jTextFieldEmail = new javax.swing.JTextField();
         jTextFieldPassword = new javax.swing.JTextField();
+        jLabelLinea2 = new javax.swing.JLabel();
+        jLabelLinea3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(770, 490));
@@ -177,7 +189,20 @@ public class LoginUser extends javax.swing.JFrame {
         jTextFieldPassword.setToolTipText("");
         jTextFieldPassword.setBorder(null);
         jTextFieldPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTextFieldPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPasswordActionPerformed(evt);
+            }
+        });
         jPanel_principal.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 300, 40));
+
+        jLabelLinea2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabelLinea2.setText("___________________________________________");
+        jPanel_principal.add(jLabelLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 310, -1));
+
+        jLabelLinea3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabelLinea3.setText("___________________________________________");
+        jPanel_principal.add(jLabelLinea3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 310, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,40 +225,44 @@ public class LoginUser extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButtonXMouseClicked
 
+    private void jTextFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginUser().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new LoginUser().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAcceder;
@@ -242,6 +271,8 @@ public class LoginUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCopyright;
     private javax.swing.JLabel jLabelEscudo200;
     private javax.swing.JLabel jLabelLinea1;
+    private javax.swing.JLabel jLabelLinea2;
+    private javax.swing.JLabel jLabelLinea3;
     private javax.swing.JLabel jLabelSistemaPersonal;
     private javax.swing.JLabel jLabelUserIco;
     private javax.swing.JPanel jPanelIzquierda;

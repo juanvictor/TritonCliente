@@ -5,6 +5,8 @@
  */
 package triton;
 
+import vista.LoginUser;
+
 /**
  *
  * @author Desarrollo01
@@ -14,8 +16,9 @@ public class Triton {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) {        
+        LoginUser loginUser = new LoginUser();
+        loginUser.setVisible(true);
     }
     
 }
