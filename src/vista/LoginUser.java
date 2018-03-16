@@ -8,15 +8,12 @@ package vista;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import java.util.Calendar;
-import com.placeholder.PlaceHolder;
 
 /**
  *
  * @author Desarrollo01
  */
 public class LoginUser extends javax.swing.JFrame {
-
-    PlaceHolder holder;
     
     /**
      * Creates new form LoginUser
@@ -51,11 +48,7 @@ public class LoginUser extends javax.swing.JFrame {
         jLabelCopyright.setText("Copyright ® Fiscalía General del Estado 2012 - " + f_actual.get(Calendar.YEAR));
         
         jLabelUserIco.setHorizontalAlignment(SwingConstants.CENTER);
-        jLabelUserIco.setVerticalAlignment(SwingConstants.CENTER); 
-        
-        holder = new PlaceHolder(jTextFieldEmail, "Correo electrónico");
-        holder = new PlaceHolder(jTextFieldPassword, "Contraseña");
-//        holder = new PlaceHolder(jPasswordFieldPassword, "Contraseña");
+        jLabelUserIco.setVerticalAlignment(SwingConstants.CENTER);
     }
 
     /**
@@ -78,9 +71,11 @@ public class LoginUser extends javax.swing.JFrame {
         jLabelUserIco = new javax.swing.JLabel();
         jButtonAcceder = new javax.swing.JButton();
         jTextFieldEmail = new javax.swing.JTextField();
-        jTextFieldPassword = new javax.swing.JTextField();
         jLabelLinea2 = new javax.swing.JLabel();
         jLabelLinea3 = new javax.swing.JLabel();
+        jLabelEmail = new javax.swing.JLabel();
+        jLabelPassword = new javax.swing.JLabel();
+        jPasswordFieldPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(770, 490));
@@ -175,34 +170,40 @@ public class LoginUser extends javax.swing.JFrame {
         jButtonAcceder.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAcceder.setText("Acceder");
         jButtonAcceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_principal.add(jButtonAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 392, 300, 40));
+        jPanel_principal.add(jButtonAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 304, 40));
 
         jTextFieldEmail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTextFieldEmail.setForeground(new java.awt.Color(153, 153, 153));
         jTextFieldEmail.setToolTipText("");
         jTextFieldEmail.setBorder(null);
         jTextFieldEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_principal.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 300, 40));
-
-        jTextFieldPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jTextFieldPassword.setForeground(new java.awt.Color(153, 153, 153));
-        jTextFieldPassword.setToolTipText("");
-        jTextFieldPassword.setBorder(null);
-        jTextFieldPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextFieldPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPasswordActionPerformed(evt);
-            }
-        });
-        jPanel_principal.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 300, 40));
+        jPanel_principal.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 300, 40));
 
         jLabelLinea2.setForeground(new java.awt.Color(153, 153, 153));
         jLabelLinea2.setText("___________________________________________");
-        jPanel_principal.add(jLabelLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 310, -1));
+        jPanel_principal.add(jLabelLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 217, 310, -1));
 
         jLabelLinea3.setForeground(new java.awt.Color(153, 153, 153));
         jLabelLinea3.setText("___________________________________________");
-        jPanel_principal.add(jLabelLinea3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 310, -1));
+        jPanel_principal.add(jLabelLinea3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 337, -1, -1));
+
+        jLabelEmail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabelEmail.setForeground(new java.awt.Color(198, 198, 198));
+        jLabelEmail.setText("Correo electrónico");
+        jLabelEmail.setToolTipText("");
+        jPanel_principal.add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 174, 300, -1));
+
+        jLabelPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabelPassword.setForeground(new java.awt.Color(198, 198, 198));
+        jLabelPassword.setText("Contraseña");
+        jLabelPassword.setToolTipText("");
+        jPanel_principal.add(jLabelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 294, 300, -1));
+
+        jPasswordFieldPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jPasswordFieldPassword.setForeground(new java.awt.Color(153, 153, 153));
+        jPasswordFieldPassword.setBorder(null);
+        jPasswordFieldPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_principal.add(jPasswordFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 300, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,10 +225,6 @@ public class LoginUser extends javax.swing.JFrame {
         // this.setVisible(false);        
         System.exit(0);
     }//GEN-LAST:event_jButtonXMouseClicked
-
-    private void jTextFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,15 +266,17 @@ public class LoginUser extends javax.swing.JFrame {
     private javax.swing.JButton jButtonX;
     private javax.swing.JLabel jLabelBienvenidoTriton;
     private javax.swing.JLabel jLabelCopyright;
+    private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelEscudo200;
     private javax.swing.JLabel jLabelLinea1;
     private javax.swing.JLabel jLabelLinea2;
     private javax.swing.JLabel jLabelLinea3;
+    private javax.swing.JLabel jLabelPassword;
     private javax.swing.JLabel jLabelSistemaPersonal;
     private javax.swing.JLabel jLabelUserIco;
     private javax.swing.JPanel jPanelIzquierda;
     private javax.swing.JPanel jPanel_principal;
+    private javax.swing.JPasswordField jPasswordFieldPassword;
     private javax.swing.JTextField jTextFieldEmail;
-    private javax.swing.JTextField jTextFieldPassword;
     // End of variables declaration//GEN-END:variables
 }
